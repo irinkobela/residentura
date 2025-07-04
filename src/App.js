@@ -6,6 +6,7 @@ import './App.css';
 const App = () => {
   const { questions } = useContext(QuestionContext);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
 
   const handleNext = () => {
     setCurrentQuestionIndex((prevIndex) =>
@@ -18,6 +19,20 @@ const App = () => {
       Math.max(prevIndex - 1, 0)
     );
   };
+
+  const handleStartQuiz = () => {
+    setShowWelcomeScreen(false);
+  };
+
+  if (showWelcomeScreen) {
+    return (
+      <div className="welcome-screen">
+        <h1>კეთილი იყოს თქვენი მობრძანება რეზიდენტურის ტესტებში!</h1>
+        <p>მოემზადეთ თქვენი ცოდნის შესამოწმებლად.</p>
+        <button onClick={handleStartQuiz}>დაწყება</button>
+      </div>
+    );
+  }
 
   if (questions.length === 0) {
     return <div>კითხვები იტვირთება...</div>;
