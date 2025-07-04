@@ -112,3 +112,18 @@
 .welcome-screen button:hover {
   background-color: #1d4ed8;
 }
+
+.answer-button.correct {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.answer-button.incorrect {
+  background-color: #f44336;
+  color: white;
+}
+
+.answer-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

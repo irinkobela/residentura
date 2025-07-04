@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { QuestionProvider, QuestionContext } from './contexts/QuestionContext';
-import Question from './components/Question';
+import QuestionView from './components/QuestionView';
 import './App.css';
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
         კითხვა {currentQuestionIndex + 1} / {questions.length}
       </div>
 
-      <Question question={questions[currentQuestionIndex]} />
+      <QuestionView question={questions[currentQuestionIndex]} />
 
       <div className="navigation">
         <button onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
