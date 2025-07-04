@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { QuestionProvider, QuestionContext } from './contexts/QuestionContext';
+import Question from './components/Question';
 import './App.css';
 
-function App() {
+const App = () => {
+  const { questions } = useContext(QuestionContext);
+  const { t } = useTranslation();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {questions.length > 0 ? (
+        <Question question={questions[0]} />
+      ) : (
+        <p>{t('loading_questions')}</p>
+      )}
     </div>
   );
-}
+};
 
-export default App;
+const Root = () => (
+  <QuestionProvider>
+    <App />
+  </QuestionProvider>
+);
+
+export default Root;

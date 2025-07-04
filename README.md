@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# 🧠 Medical Study Web App – Residency Prep
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive, modern, and effective web application designed to help medical students and residents master exam material through engaging, science-backed study methods.
 
-## Available Scripts
+## 📌 Project Vision
 
-In the project directory, you can run:
+To provide an efficient, focused study tool that transforms the difficult process of memorization into a more intuitive and less stressful experience. By leveraging active recall, immediate feedback, and intelligent review systems, this application aims to improve long-term retention and boost user confidence for high-stakes medical exams.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🗺️ Development Roadmap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project will be developed in three distinct phases, starting with a core functional product and progressively adding advanced features.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Phase 1: Minimum Viable Product (MVP) - Core Functionality
 
-### `npm run build`
+The goal of this phase is to build a usable, focused study tool with all the essential features.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ **Single Question View**  
+Displays one question at a time to minimize cognitive load, with a persistent progress tracker (e.g., “Question 1 of 2744”).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ **Interactive Answering**  
+All answer options are presented as clickable buttons.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ **Immediate Feedback System**  
+- Correct selection: Highlights the button in green.  
+- Incorrect selection: Highlights the clicked button in red and simultaneously highlights the correct answer in green.  
+- Answer Locking: All answer buttons for the current question are disabled after the first selection.
 
-### `npm run eject`
+✅ **Explanation Reveal**  
+- The explanation is hidden by default to encourage active recall.  
+- It can be revealed by either clicking an "Explanation" button or clicking the main card area.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+✅ **Core Navigation**  
+Functional "Previous" and "Next" buttons to move through the question set.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✅ **Data Loading**  
+The application will successfully load and parse all questions from the local questions.json file on startup.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Phase 2: Enhanced Study & Personalization
 
-## Learn More
+This phase focuses on adding features that allow users to personalize their study sessions and improve the user experience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🏷️ **Unified Tagging & Filtering System**  
+- Implement a system to filter questions based on the `tags` field in the JSON data (e.g., "Cardiology", "Pharmacology").  
+- Users can select multiple tags to create custom study sets.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+⭐ **Bookmarking**  
+- Allow users to "star" or bookmark any question.  
+- A dedicated "Bookmarked" filter will allow for quick review of these saved questions.
 
-### Code Splitting
+🔎 **Search Functionality**  
+- Implement a search bar to instantly find questions containing specific keywords (e.g., "furosemide", "AV block").
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🌙 **UI/UX Enhancements**  
+- **Dark Mode**: A toggle for comfortable night-time studying.  
+- **Accessibility Controls**: Simple buttons to increase or decrease the text font size.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Phase 3: Advanced Learning & Gamification
 
-### Making a Progressive Web App
+This phase transforms the tool into an intelligent learning partner by incorporating advanced features and gamification.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🧠 **Smart Review Deck (Spaced Repetition System)**  
+- Automatically add any incorrectly answered question to a "Review Deck".  
+- Implement a "Flashcard Mode" where users can rate their confidence ("Hard", "Medium", "Easy") after seeing the answer.  
+- The system will use this data to prioritize showing "Hard" questions more frequently, automating spaced repetition.
 
-### Advanced Configuration
+📊 **Progress Tracking Dashboard**  
+- A visual dashboard showing overall completion percentage and accuracy statistics.  
+- Track stats per tag to identify weak areas.  
+- Implement a "study streak" counter to encourage consistent use.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+⌨️ **Keyboard Shortcuts**  
+- Enable full navigation and interaction via the keyboard:  
+  - Arrow keys for next/previous  
+  - Number keys for answers  
+  - Spacebar for explanation flip  
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🛠️ Technical Architecture
 
-### `npm run build` fails to minify
+**Frontend Framework**: React.js (or a similar modern library like Vue.js) for building a reactive and modular user interface.  
+**Styling**: Tailwind CSS for rapid, utility-first styling to maintain a clean and modern look.  
+**Data Management**: All question content will be managed via a static JSON file (`questions.json`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### State & Persistence
+
+The application state (current question, etc.) will be managed within React.  
+User-specific data will be persisted in the browser's `localStorage`. This includes:
+- The ID of the last viewed question.
+- A list of all bookmarked question IDs.
+- The list of question IDs in the "Review Deck".
+- All progress and accuracy statistics.
+- UI settings (Dark Mode state, font size).
+
+### Offline Capability
+
+- The application will be structured as a Progressive Web App (PWA).  
+- Service Workers will be used to cache the application shell and all JSON data, enabling full offline functionality after the first visit.
+
+---
+
+## 📁 Finalized JSON Data Schema
+
+Each question object in `questions.json` must adhere to the following structure. The `tags` array is essential for the filtering functionality.
+
+```json
+{
+  "id": "00001",
+  "question": "What is characteristic of AV block?",
+  "answers": [
+    { "text": "QRS prolongation", "isCorrect": false },
+    { "text": "PQ prolongation", "isCorrect": true },
+    { "text": "QT prolongation", "isCorrect": false },
+    { "text": "R wave deformity", "isCorrect": false }
+  ],
+  "explanation": "AV block is diagnosed by prolonged PQ interval, indicating slowed conduction through the AV node.",
+  "tags": ["Cardiology", "ECG"]
+}
+```
+
+---
+
+## 🔐 License
+
+This project is distributed under the MIT License. It is free for personal, academic, and commercial use. See the LICENSE file for more details.
