@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function QuestionView({ question }) {
+function QuestionView({ question, onAnswerResult }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -18,6 +18,11 @@ function QuestionView({ question }) {
 
     setSelectedAnswer(answer);
     setIsAnswered(true);
+
+    // Report answer result to parent
+    if (onAnswerResult) {
+      onAnswerResult(question.id, answer.isCorrect);
+    }
   };
 
   const getButtonClassName = (answer) => {

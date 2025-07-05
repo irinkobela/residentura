@@ -1,11 +1,21 @@
 {
-  "short_name": "რეზიდენტურის სასწავლო აპლიკაცია",
-  "name": "რეზიდენტურის სასწავლო აპლიკაცია",
+  "short_name": "Residentura",
+  "name": "Residentura",
   "icons": [
     {
       "src": "2.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "2.svg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "2.svg",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
